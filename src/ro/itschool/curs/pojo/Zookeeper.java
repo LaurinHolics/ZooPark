@@ -1,6 +1,7 @@
 package ro.itschool.curs.pojo;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +21,6 @@ public class Zookeeper {
 	private int weight;
 	private int age;
 	private String gender;
-	private LocalDate birthDate;
 	private int id;
 	
 	

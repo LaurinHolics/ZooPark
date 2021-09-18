@@ -37,6 +37,7 @@ public class ElephantDao {
 
 	private Elephant mapElephantFromDB(ResultSet resultSet) {
 		Elephant elephant = new Elephant();
+		ZookeeperDao zookeeperDao = new ZookeeperDao();
 		
 		try {
 			if (resultSet.next()) {
@@ -49,7 +50,7 @@ public class ElephantDao {
 				elephant.setName(resultSet.getString("name"));
 				elephant.setVertebrate(resultSet.getBoolean("vertebrate"));
 				elephant.setWeight(resultSet.getInt("weight"));				
-				Zookeeper zookeeper = ZookeeperDao.getZooKeeperById(resultSet.getInt("ZooKeeperID"));
+				Zookeeper zookeeper = zookeeperDao.getZookeeperById(resultSet.getInt("ZooKeeperID"));
 				elephant.setZookeeper(zookeeper);
 			}
 		} catch (SQLException e) {
