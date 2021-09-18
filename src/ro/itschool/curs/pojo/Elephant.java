@@ -1,0 +1,20 @@
+package ro.itschool.curs.pojo;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString(callSuper=true, includeFieldNames=true)
+@Getter
+@Setter
+public class Elephant extends Animal{
+	
+	private int maxKgOfNutsPerDay;
+	private Zookeeper zookeeper;
+
+}
