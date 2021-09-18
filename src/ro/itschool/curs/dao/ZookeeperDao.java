@@ -5,11 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import lombok.extern.java.Log;
 import ro.itschool.curs.connection.ConnectionFactory;
 import ro.itschool.curs.enums.ConservationStatus;
 import ro.itschool.curs.pojo.Elephant;
 import ro.itschool.curs.pojo.Zookeeper;
 
+@Log
 public class ZookeeperDao {
 
 	private Connection connection;
@@ -18,6 +20,7 @@ public class ZookeeperDao {
 
 	public ZookeeperDao() {
 		connection = ConnectionFactory.getConnection();
+		log.info("Am apelat constructorul ZookeeperDao");
 	}
 
 	public Zookeeper getZookeeperById(int id) {
