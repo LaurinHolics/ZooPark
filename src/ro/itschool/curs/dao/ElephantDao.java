@@ -5,17 +5,23 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import lombok.extern.java.Log;
 import ro.itschool.curs.connection.ConnectionFactory;
 import ro.itschool.curs.enums.ConservationStatus;
 import ro.itschool.curs.pojo.Elephant;
 import ro.itschool.curs.pojo.Zookeeper;
 
+
+@Log
 public class ElephantDao {
 
 	private Connection connection;
 	private PreparedStatement preparedStatement;
 	private ResultSet resultSet;
+	private ZookeeperDao zookeeperDao;
 
 	public ElephantDao() {
 		connection = ConnectionFactory.getConnection();
@@ -37,8 +43,7 @@ public class ElephantDao {
 
 	private Elephant mapElephantFromDB(ResultSet resultSet) {
 		Elephant elephant = new Elephant();
-		ZookeeperDao zookeeperDao = new ZookeeperDao();
-		
+
 		try {
 			if (resultSet.next()) {
 				elephant.setAge(resultSet.getInt("age"));
@@ -49,7 +54,8 @@ public class ElephantDao {
 				elephant.setMaxKgOfNutsPerDay(resultSet.getInt("maxKgOfNutsPerDay"));
 				elephant.setName(resultSet.getString("name"));
 				elephant.setVertebrate(resultSet.getBoolean("vertebrate"));
-				elephant.setWeight(resultSet.getInt("weight"));				
+				elephant.setWeight(resultSet.getInt("weight"));
+				
 				Zookeeper zookeeper = zookeeperDao.getZookeeperById(resultSet.getInt("ZooKeeperID"));
 				elephant.setZookeeper(zookeeper);
 			}
@@ -65,8 +71,7 @@ public class ElephantDao {
 		preparedStatement.getConnection()
 				.prepareStatement("insert into zoopark.elephant values(default, ?, ?, ?, ?, ?, ?, ?, ?)");
 		preparedStatement.setBoolean(1, elephant.isVertebrate());
-		preparedStatement.setString(2,
-				elephant.getConservationStatus().toString());
+		preparedStatement.setString(2, elephant.getConservationStatus().toString());
 		preparedStatement.setBoolean(3, elephant.isMammal());
 		preparedStatement.setInt(4, elephant.getAge());
 		preparedStatement.setDate(5, (Date) elephant.getBirthDate());
@@ -87,12 +92,12 @@ public class ElephantDao {
 		}
 		return elephant;
 	}
-	
-	public void updateElephant(int id,Elephant elephant)throws SQLException{
-		preparedStatement = connection.prepareStatement("update elephant set vertebrate=?, conservationstatus=?, mammal=?, age=?, birthdate=?, name=?, weight=?, maxkgofnutsperday=? where id=?");
+
+	public void updateElephant(int id, Elephant elephant) throws SQLException {
+		preparedStatement = connection.prepareStatement(
+				"update elephant set vertebrate=?, conservationstatus=?, mammal=?, age=?, birthdate=?, name=?, weight=?, maxkgofnutsperday=? where id=?");
 		preparedStatement.setBoolean(1, elephant.isVertebrate());
-		preparedStatement.setString(2,
-				elephant.getConservationStatus().toString());
+		preparedStatement.setString(2, elephant.getConservationStatus().toString());
 		preparedStatement.setBoolean(3, elephant.isMammal());
 		preparedStatement.setInt(4, elephant.getAge());
 		preparedStatement.setDate(5, (Date) elephant.getBirthDate());
@@ -102,11 +107,35 @@ public class ElephantDao {
 		preparedStatement.setInt(9, id);
 		preparedStatement.executeUpdate();
 	}
-	
-	public void removeCommentById(int id)throws SQLException{
+
+	public void removeCommentById(int id) throws SQLException {
 		preparedStatement = connection.prepareStatement("delete from elephant where id=?;");
 		preparedStatement.setInt(1, id);
 		preparedStatement.executeQuery();
 	}
+
+	public List<Elephant> getAllElephants() throws SQLException {
+		preparedStatement = connection.prepareStatement("select * from elephant");
+		resultSet = preparedStatement.executeQuery();
+		Elephant elephant = new Elephant();
+		List<Elephant> elephantList = new ArrayList<>();
+		while (resultSet.next()) {
+			elephant.setAge(resultSet.getInt("age"));
+			elephant.setBirthDate(resultSet.getDate("birthDate"));
+			elephant.setConservationStatus(ConservationStatus.valueOf(resultSet.getString("conservationStatus")));
+			elephant.setId(resultSet.getInt("id"));
+			elephant.setMammal(resultSet.getBoolean("mammal"));
+			elephant.setMaxKgOfNutsPerDay(resultSet.getInt("maxKgOfNutsPerDay"));
+			elephant.setName(resultSet.getString("name"));
+			elephant.setVertebrate(resultSet.getBoolean("vertebrate"));
+			elephant.setWeight(resultSet.getInt("weight"));
+			
+			Zookeeper zookeeper = zookeeperDao.getZookeeperById(resultSet.getInt("ZooKeeperID"));
+			elephant.setZookeeper(zookeeper);
+			elephantList.add(elephant);
+		}
+		return elephantList;
+	}
+	
 
 }

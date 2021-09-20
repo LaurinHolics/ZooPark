@@ -23,17 +23,12 @@ public class ZookeeperDao {
 		log.info("Am apelat constructorul ZookeeperDao");
 	}
 
-	public Zookeeper getZookeeperById(int id) {
-		try {
+	public Zookeeper getZookeeperById(int id) throws SQLException {
+		
 			preparedStatement = connection.prepareStatement("select * from zookeeper where id = ? ;");
 			preparedStatement.setInt(1, id);
 			resultSet = preparedStatement.executeQuery();
 			return mapZookeeperFromDB(resultSet);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
-
 	}
 
 	private Zookeeper mapZookeeperFromDB(ResultSet resultSet) {
