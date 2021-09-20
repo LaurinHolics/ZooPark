@@ -1,8 +1,5 @@
 package ro.itschool.curs.pojo;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
