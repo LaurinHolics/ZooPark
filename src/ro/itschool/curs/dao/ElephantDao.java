@@ -45,15 +45,16 @@ public class ElephantDao {
 		try {
 			preparedStatement = connection
 					.prepareStatement("insert into elephant values (default, ?,?,?,?,?,?,?,?,?)");
-			preparedStatement.setString(1, elephant.getName());
-			preparedStatement.setInt(2, elephant.getAge());
-			preparedStatement.setInt(3, elephant.getWeight());
-			preparedStatement.setInt(4, elephant.getMaxKgOfNutsPerDay());
+			preparedStatement.setBoolean(1, elephant.isVertebrate());
+			preparedStatement.setString(2, elephant.getConservationStatus().toString());
+			preparedStatement.setBoolean(3, elephant.isMammal());
+			preparedStatement.setInt(4, elephant.getAge());
 			preparedStatement.setDate(5, elephant.getBirthDate());
-			preparedStatement.setString(6, elephant.getConservationStatus().toString());
-			preparedStatement.setBoolean(7, elephant.isVertebrate());
-			preparedStatement.setBoolean(8, elephant.isMammal());
+			preparedStatement.setString(6, elephant.getName());
+			preparedStatement.setInt(7, elephant.getWeight());
+			preparedStatement.setInt(8, elephant.getMaxKgOfNutsPerDay());
 			preparedStatement.setInt(9, elephant.getZookeeper().getId());
+			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
