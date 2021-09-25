@@ -140,6 +140,5 @@ public class ElephantDao {
 		}
 		return elephant;
 	}
-	
 
 }

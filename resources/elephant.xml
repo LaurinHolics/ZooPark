@@ -1,0 +1,46 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+	<changeSet id="2" author="test">
+		<sql>
+			DROP TABLE IF EXISTS elephant;
+			create table Elephant (
+			ID int
+			AUTO_INCREMENT NOT NULL,
+			Vertebrate boolean,
+			ConservationStatus
+			varchar(255),
+			Mammal boolean,
+			Age int,
+			BirthDate date,
+			Name varchar(255),
+			Weight int,
+			MaxKgOfNutsPerDay int,
+			zookeeperid int,
+			PRIMARY KEY(ID),
+			FOREIGN KEY (zookeeperid) REFERENCES Zookeeper(id)
+			);
+			INSERT INTO
+			elephant(
+			Vertebrate,
+			ConservationStatus,
+			Mammal,
+			Age,
+			BirthDate,
+			Name,
+			Weight,
+			MaxKgOfNutsPerDay,
+			zookeeperid
+			)
+			VALUES(
+			TRUE,
+			"LC",
+			TRUE,
+			14,
+			NOW(),
+			"Dumbo2", 1500, 5, 1)
+		</sql>
+	</changeSet>
+</databaseChangeLog>

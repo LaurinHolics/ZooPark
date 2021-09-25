@@ -1,0 +1,127 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+	<changeSet id="1" author="test">
+		<sql>
+
+			DROP TABLE zookeeper;	
+			create table Zookeeper (
+   		    ID int AUTO_INCREMENT NOT NULL,
+   			age int,
+    		name varchar(255),
+            weight int,
+            gender varchar(255),
+            PRIMARY KEY(ID)
+             );
+			INSERT INTO zookeeper(age,
+			name,
+			weight,
+			gender)
+			VALUES(21,
+			"Ion",
+			89,
+			"Male");
+
+			INSERT INTO
+			zookeeper(age,
+			name,
+			weight, gender)
+			VALUES(22,
+			"Viorica", 89, "Female");
+
+			INSERT INTO
+			zookeeper(age, name,
+			weight,
+			gender)
+			VALUES(23, "Gheorghe",
+			89,
+			"Male");
+
+			INSERT INTO
+			zookeeper(age,
+			name, weight, gender)
+			VALUES(24,
+			"Maria", 89,
+			"Female");
+
+			INSERT INTO
+			zookeeper(age, name, weight,
+			gender)
+			VALUES(25,
+			"Petru", 89,
+			"Male");
+
+			INSERT INTO
+			zookeeper(age, name, weight,
+			gender)
+			VALUES(17,
+			"Mihai", 89,
+			"Male");
+
+			INSERT INTO zookeeper(age, name,
+			weight,
+			gender)
+			VALUES(31,
+			"Gosia", 79,
+			"Female");
+
+			INSERT INTO
+			zookeeper(age, name,
+			weight,
+			gender)
+			VALUES(31,
+			"Carlos", 100,
+			"Male");
+
+			INSERT INTO zookeeper(age, name,
+			weight,
+			gender)
+			VALUES(38,
+			"Tomas", 80,
+			"Male");
+
+			INSERT INTO zookeeper(age, name,
+			weight,
+			gender)
+			VALUES(21,
+			"Andreea", 59,
+			"Female");
+
+			INSERT INTO
+			zookeeper(age, name,
+			weight,
+			gender)
+			VALUES(21,
+			"Diana", 63,
+			"Female");
+
+			INSERT INTO zookeeper(age,
+			name,
+			weight,
+			gender)
+			VALUES(27,
+			"Daniel",
+			102,
+			"Male");
+
+			INSERT INTO
+			zookeeper(age, name,
+			weight,
+			gender)
+			VALUES(21,
+			"Victor", 89,
+			"Male");
+
+			INSERT INTO zookeeper(age, name,
+			weight,
+			gender)
+			VALUES(21,
+			"Sebi", 100,
+			"Male");
+
+
+		</sql>
+	</changeSet>
+</databaseChangeLog>
