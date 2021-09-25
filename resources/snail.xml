@@ -1,0 +1,120 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+	<changeSet id="3" author="test">
+		<sql>
+
+
+			INSERT INTO `snail`(`Vertebrate`, `ConservationStatus`, `Mammal`, `Age`, `BirthDate`, `Name`, `Weight`, `shellColor`, `zookeeper`)
+VALUES
+(false, "LC", false, 2, now(), "Grecce", 1, "yellow", 3),
+
+(false, "LC", false, 3, now(), "Will", 2, "green", 4),
+
+(false, "LC", false, 4, now(), "Harrison", 20, "Brown", 5),
+
+(false, "LC", false, 5, now(), "Ghipson", 13, "Grey", 6),
+
+(false, "LC", false, 6, now(), "Stein", 26, "Blue", 7),
+
+(false, "LC", false, 7, now(), "John", 28, "Purple", 8),
+
+ (false, "LC", false, 8, now(), "Cena", 29, "Orange", 9),
+
+ (false, "LC", false, 9, now(), "Rock", 10, "Black", 10),
+
+ (false, "LC", false, 10, now(), "Jasmin", 11, "White", 11),
+
+ (false, "LC", false, 11, now(), "Turbo", 12, "Azure", 12),
+
+ (false, "LC", false, 12, now(), "Oliver", 13, "Ivory", 13),
+
+ (false, "LC", false, 13, now(), "Jack", 14, "Teal", 14),
+
+ (false, "LC", false, 2, now(), "Jacob", 15, "Silver", 15),
+
+(false, "LC", false, 3, now(), "Charlie", 16, "Navy Blue", 16),
+
+ (false, "LC", false, 4, now(), "Thomas", 17, "Pea Green", 17),
+
+ (false, "LC", false, 5, now(), "Oscar", 18, "Maroon", 18),
+
+ (false, "LC", false, 6, now(), "James", 19, "Charcoal", 19),
+
+ (false, "LC", false, 6, now(), "Amelia", 30, "Aquamarine", 30),
+
+ (false, "LC", false, 8, now(), "Olivia", 31, "Coral", 31),
+
+ (false, "LC", false, 8, now(), "Isla", 32, "Fuchsia", 32),
+
+ (false, "LC", false, 9, now(), "Emily", 33, "Wheat", 33),
+
+(false, "LC", false, 21, now(), "Jessica", 34, "Lime", 34),
+
+ (false, "LC", false, 2, now(), "Poppy", 35, "Crimson", 35),
+
+ (false, "LC", false, 1, now(), "Joe", 36, "Khaki", 36),
+
+(false, "LC", false, 2, now(), "George", 37, "Hot pink", 37),
+
+ (false, "LC", false, 3, now(), "Kyle", 38, "Magenta", 38),
+
+ (false, "LC", false, 4, now(), "Thomas", 39, "Olden", 39),
+
+ (false, "LC", false, 5, now(), "James", 40, "olive", 40),
+
+ (false, "LC", false, 6, now(), "Carl", 41, "White", 41),
+
+ (false, "LC", false, 6, now(), "Damian", 42, "Blue", 42),
+
+ (false, "LC", false, 7, now(), "Connor", 43, "Yellow", 43),
+
+ (false, "LC", false, 8, now(), "Callum", 44, "Red", 44),
+
+ (false, "LC", false, 8, now(), "Reece", 45, "green", 45),
+
+ (false, "LC", false, 2, now(), "Rhys", 46, "Black", 46),
+
+ (false, "LC", false, 28, now(), "Mason", 47, "Brown", 47),
+
+ (false, "LC", false, 21, now(), "Victoria", 48, "Azure", 48),
+
+ (false, "LC", false, 12, now(), "Emily", 49, "Ivory", 49),
+
+ (false, "LC", false, 22, now(), "Poppy", 49, "teal", 50),
+
+ (false, "LC", false, 24, now(), "Emma", 1, "silver", 1),
+
+ (false, "LC", false, 25, now(), "Ava", 2, "pink", 2),
+
+ (false, "LC", false, 25, now(), "Mia", 3, "pink", 3),
+
+ (false, "LC", false, 27, now(), "Emilly", 4, "Gray", 4),
+
+ (false, "LC", false, 27, now(), "Abigali", 5, "Orange", 5),
+
+ (false, "LC", false, 8, now(), "Sarah", 6, "Maroon", 6),
+
+ (false, "LC", false, 9, now(), "Daniel", 7, "Charcoal", 7),
+
+ (false, "LC", false, 29, now(), "Liam", 8, "Aquamarine", 8),
+
+ (false, "LC", false, 25, now(), "Charles", 9, "pink", 9),
+
+ (false, "LC", false, 21, now(), "Joseph", 10, "Coral", 9),
+
+ (false, "LC", false, 12, now(), "Alexander", 10, "Fuchsia", 10),
+
+ (false, "LC", false, 1, now(), "Robert", 11, "Lime", 11),
+
+ (false, "LC", false, 3, now(), "Taylor", 12, "Crimson", 12),
+
+ (false, "LC", false, 3, now(), "Smith", 13, "Chaki", 13),
+
+(false, "LC", false, 4, now(), "Davis", 14, "Plum", 14),
+
+(false, "LC", false, 5, now(), "Wilson", 15, "Olive", 15)
+
+
+		</sql>
+	</changeSet>
+</databaseChangeLog>

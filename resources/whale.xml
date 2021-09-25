@@ -1,0 +1,150 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+	<changeSet id="3" author="MC">
+		<sql>
+			DROP TABLE IF EXISTS whale;
+			create table Whale (
+			ID int
+			AUTO_INCREMENT NOT NULL,
+			Vertebrate boolean,
+			ConservationStatus
+			varchar(255),
+			Mammal boolean,
+			Age int,
+			BirthDate date,
+			Name varchar(255),
+			Weight int,
+			OptimalSalinityLevel varchar(255),
+			zookeeperid int,
+			PRIMARY KEY(ID),
+			FOREIGN KEY (zookeeperid) REFERENCES
+			Zookeeper(id)
+			);
+			INSERT INTO
+			Whale(
+			Vertebrate,
+			ConservationStatus,
+			Mammal,
+			Age,
+			BirthDate,
+			Name,
+			Weight,
+			OptimalSalinityLevel,
+			zookeeperid
+			)
+			VALUES
+			(TRUE,
+			"LC",
+			TRUE,
+			14,
+			NOW(),
+			"Willy", 1500, "Salty", 15),
+
+			(TRUE,
+			"CD",
+			TRUE,
+			10,
+			NOW(),
+			"Wonka", 1500, "Very Salty", 14),
+			
+			(TRUE,
+			"NT",
+			TRUE,
+			9,
+			NOW(),
+			"Mathilda", 1000, "Not Salty", 13),
+			
+			(TRUE,
+			"CD",
+			TRUE,
+			8,
+			NOW(),
+			"Colossus", 2000, "Salty", 12),
+			
+			(TRUE,
+			"CR",
+			TRUE,
+			7,
+			NOW(),
+			"Charlie", 1500, " Salty", 11),
+			
+			(TRUE,
+			"VU",
+			TRUE,
+			10,
+			NOW(),
+			"Catcher", 800, "Salty", 10),
+			
+			(TRUE,
+			"NT",
+			TRUE,
+			18,
+			NOW(),
+			"Sophie", 900, "Salty", 9),
+			
+			(TRUE,
+			"CD",
+			TRUE,
+			5,
+			NOW(),
+			"Helga", 1300, "Not Salty", 8),
+			
+			(TRUE,
+			"LC",
+			TRUE,
+			12,
+			NOW(),
+			"Melusine", 1000, "Extremely Salty", 7),
+			
+			(TRUE,
+			"VU",
+			TRUE,
+			2,
+			NOW(),
+			"Bomburst", 1100, "Salty", 6),
+			
+			(TRUE,
+			"LC",
+			TRUE,
+			5,
+			NOW(),
+			"Freestyler", 500, "Very Salty", 5),
+			
+			(TRUE,
+			"EW",
+			TRUE,
+			6,
+			NOW(),
+			"Galahad", 1000, "Salty", 4),
+			
+			(TRUE,
+			"EW",
+			TRUE,
+			8,
+			NOW(),
+			"Lancelot", 1500, "Not Salty", 3),
+			
+			(TRUE,
+			"EW",
+			TRUE,
+			4,
+			NOW(),
+			"Guinevere", 900, "Salty", 2),
+			
+			(TRUE,
+			"LC",
+			TRUE,
+			20,
+			NOW(),
+			"Merlin", 1100, "Salty", 1);
+			
+						
+
+
+
+		</sql>
+	</changeSet>
+</databaseChangeLog>
