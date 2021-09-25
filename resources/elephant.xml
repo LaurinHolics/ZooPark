@@ -38,9 +38,49 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
 			TRUE,
 			"LC",
 			TRUE,
+			16,
+			NOW(),
+			"Dumbo", 300, 15, 1);
+			
+			INSERT INTO
+			elephant(
+			Vertebrate,
+			ConservationStatus,
+			Mammal,
+			Age,
+			BirthDate,
+			Name,
+			Weight,
+			MaxKgOfNutsPerDay,
+			zookeeperid
+			)
+			VALUES(
+			TRUE,
+			"LC",
+			TRUE,
+			24,
+			NOW(),
+			"MIKI", 850, 16, 2);
+			
+			INSERT INTO
+			elephant(
+			Vertebrate,
+			ConservationStatus,
+			Mammal,
+			Age,
+			BirthDate,
+			Name,
+			Weight,
+			MaxKgOfNutsPerDay,
+			zookeeperid
+			)
+			VALUES(
+			TRUE,
+			"LC",
+			TRUE,
 			14,
 			NOW(),
-			"Dumbo2", 1500, 5, 1)
+			"Mimo", 1200, 40, 2)
 		</sql>
 	</changeSet>
 </databaseChangeLog>
