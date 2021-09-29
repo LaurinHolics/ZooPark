@@ -65,7 +65,7 @@ public class SnakeDao {
 		preparedStatement.setDate(2, (Date) snake.getBirthDate());
 		preparedStatement.setString(3, snake.getConservationStatus().toString());
 		preparedStatement.setInt(4, snake.getId());
-		preparedStatement.setInt(5, snake.getLength());
+		preparedStatement.setInt(5, snake.getLenght());
 		preparedStatement.setBoolean(6, snake.isMammal());
 		preparedStatement.setString(7, snake.getName());
 		preparedStatement.setBoolean(8, snake.isVenomous());
