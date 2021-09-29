@@ -15,12 +15,12 @@ import ro.itschool.curs.enums.ConservationStatus;
 @ToString
 public class Animal {
 	
+	private int id;
 	private boolean vertebrate;
 	private ConservationStatus conservationStatus;
 	private boolean mammal;
 	private int age;
 	private Date birthDate;
-	private int id;
 	private String name;
 	private int weight;
 

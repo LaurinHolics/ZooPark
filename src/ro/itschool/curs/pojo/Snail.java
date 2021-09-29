@@ -8,10 +8,14 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Getter
 @Setter
 public class Snail extends Animal{
 
 	private String shellColour;
+	private Zookeeper zookeeper;
+	@Override
+	public String toString() {
+		return "\nSnail " + super.toString() + " shellColour=" + shellColour + ", zookeeper=" + zookeeper ;
+	}
 }

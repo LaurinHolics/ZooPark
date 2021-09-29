@@ -32,3 +32,6 @@ _ReSharper*/
 packages/
 target/
 *.class
+/target/classes/ro/itschool/curs/pojo/Animal.class
+/target/classes/ro/itschool/curs/pojo/Zookeeper.class
+/target/classes/ro/itschool/curs/pojo/Snail.class
