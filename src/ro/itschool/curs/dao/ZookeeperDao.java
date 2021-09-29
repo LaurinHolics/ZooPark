@@ -13,7 +13,6 @@ import ro.itschool.curs.pojo.Zookeeper;
 
 @Log
 public class ZookeeperDao {
-
 	private Connection connection;
 	private PreparedStatement preparedStatement;
 	private ResultSet resultSet;
