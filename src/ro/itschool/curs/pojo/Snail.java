@@ -18,4 +18,5 @@ public class Snail extends Animal{
 	public String toString() {
 		return "\nSnail " + super.toString() + " shellColour=" + shellColour + ", zookeeper=" + zookeeper ;
 	}
+
 }
